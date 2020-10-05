@@ -59,6 +59,7 @@
     opacity: 0;
     width: 0;
     visibility: hidden;
+    display: none;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
@@ -113,6 +114,7 @@
     opacity: 1;
     width: 100%;
     visibility: visible;
+    display: block;
   }
 
   &__icon {
