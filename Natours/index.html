@@ -384,7 +384,12 @@
         <div class="row">
           <div class="book">
             <div class="book__form">
-              <form class="form" method="POST" data-netlify="true">
+              <form
+                class="form"
+                method="POST"
+                data-netlify="true"
+                data-netlify-recaptcha="true"
+              >
                 <div class="u-margin-bottom-medium">
                   <h2 class="heading-secondary">Start Booking now</h2>
                 </div>
@@ -417,7 +422,7 @@
                       type="radio"
                       class="form__radio-input"
                       id="small"
-                      name="size"
+                      name="size Small"
                     />
                     <label for="small" class="form__radio-label"
                       ><span class="form__radio-button"></span> Small tour
@@ -429,7 +434,7 @@
                       type="radio"
                       class="form__radio-input"
                       id="large"
-                      name="size"
+                      name="size Big"
                     />
                     <label for="large" class="form__radio-label"
                       ><span class="form__radio-button"></span> Large tour
@@ -437,7 +442,7 @@
                     >
                   </div>
                 </div>
-
+                <div data-netlify-recaptcha="true"></div>
                 <div class="form__group">
                   <button href="#" class="btn btn--green">
                     Next Step &rarr;
