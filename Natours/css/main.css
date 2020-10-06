@@ -63,6 +63,10 @@ body {
   background-color: #55c57a;
   color: #fff; }
 
+@media only screen and (max-width: 37.5em) {
+  .spam-filter {
+    display: none; } }
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -245,6 +249,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -827,6 +832,8 @@ body {
   z-index: 101;
   opacity: 0;
   width: 0;
+  visibility: hidden;
+  display: none;
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 .navigation__list {
@@ -866,7 +873,9 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
-  width: 100%; }
+  width: 100%;
+  visibility: visible;
+  display: block; }
 
 .navigation__icon {
   position: relative;
