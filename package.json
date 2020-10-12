@@ -4,11 +4,22 @@
   "description": "Landing Page for natours",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass  scss/main.scss -o Natours/css/ -w"
+    "watch:sass": "node-sass  scss/main.scss  Natours/css/main.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass  scss/main.scss Natours/css/main.comp.css",
+    "concat:css": "concat -o Natours/css/main.concat.css Natours/css/styles.css Natours/css/main.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' Natours/css/main.concat.css -o Natours/css/main.prefix.css",
+    "compress:css": "node-sass Natours/css/main.comp.css Natours/css/main.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "author": "Pradyumna",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.5.3"
+    "autoprefixer": "^10.0.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "postcss": "^8.1.1",
+    "live-server": "^1.2.1"
   }
 }
